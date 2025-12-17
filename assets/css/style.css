@@ -33,6 +33,7 @@ a {
 
 #music {
     position: relative;
+    padding: 2rem;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -62,9 +63,9 @@ a {
     align-items: center;
     width: 450px;
     backdrop-filter: blur(10px);
-    border-radius: 5%;
+    border-radius: 25px;
     background-color: rgba(253, 253, 253, 0.7); /* Add a semi-transparent background color */
-    padding: 25px 0;
+    padding: 2rem 0;
 }
 
 #videoBackground {
@@ -84,7 +85,6 @@ a {
     width: 400px;
     height: 400px;
     object-fit: cover;
-    overflow: hidden;
     transition: all .3s ease-in-out;
 }
 
@@ -233,6 +233,7 @@ Playlist
 #list {
     display: flex;
     flex-direction: column;
+    position: relative;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(253, 253, 253, 0.5); /* Add a semi-transparent background color */
@@ -288,4 +289,32 @@ Playlist
     to {
         transform: rotate(360deg);
     }
+}
+
+@media screen and (max-width: 500px) {
+
+    #music {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    #music>div{
+        margin: 2rem 0;
+    }
+
+    #home {
+        width: 100%;
+        padding: 1.3rem 0;
+    }
+
+    #slider {
+        width: 300px;
+        height: 300px;
+    }
+
+    #navigation {
+        width: 300px;
+    }
+
 }
