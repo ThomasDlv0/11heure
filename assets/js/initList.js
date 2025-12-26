@@ -7,34 +7,44 @@ function initList() {
     playlist.forEach(function(value,index) {
         const list = document.querySelector("#list");
         const divItems = document.createElement('div');
+        const divElement = document.createElement('div');
         const imgItems = document.createElement('img');
         const titreItems = document.createElement('span');
         const barreItems = document.createElement('span');
         const artiste = document.createElement('span');
+        const divIcon = document.createElement('div');
         const playIcon = document.createElement('i');
         const loveIcon = document.createElement('i');
         let isPLay = false;
         let isLove = false;
         divItems.classList.add("divItems");
+        divElement.classList.add("divElement");
         imgItems.classList.add("imgItems");
+        divIcon.classList.add("divIcon");
+
+
         list.append(divItems);
+        divItems.append(divElement);
         imgItems.src = playlist[index].cover;
-        divItems.append(imgItems);
+        divElement.append(imgItems);
         titreItems.textContent = playlist[index].titre
-        divItems.append(titreItems);
+        divElement.append(titreItems);
         barreItems.textContent = "-"
-        divItems.append(barreItems);
+        divElement.append(barreItems);
         artiste.textContent = playlist[index].artiste
-        divItems.append(artiste);
+        divElement.append(artiste);
+
+        // Icons
+        divItems.append(divIcon);
         playIcon.classList.add("fa-solid");
         playIcon.classList.add("fa-play");
-        divItems.append(playIcon);
+        divIcon.append(playIcon);
         loveIcon.classList.add("fa-heart");
         loveIcon.classList.add("fa-regular");
-        divItems.append(loveIcon);
+        divIcon.append(loveIcon);
 
         playIcon.addEventListener("click", () => {
-            i = index;
+            let i = index;
 
             // enverse de 
             isPLay = !isPLay
@@ -48,7 +58,7 @@ function initList() {
         });
         
         loveIcon.addEventListener("click", () => {
-            i = index;
+            let i = index;
             isLove = !isLove
             if (isLove) {
                 loveIcon.classList.replace("fa-regular", "fa-solid");
